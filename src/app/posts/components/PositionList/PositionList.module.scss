@@ -1,0 +1,64 @@
+@import "../../../../sass/helper";
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.post {
+  background-color: $bg-secondary-color;
+  transition: transform 0.3s ease-in-out;
+  border-radius: $border-radius;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  min-height: 80px;
+  width: 100%;
+}
+
+.name {
+  color: $white-color;
+  margin-bottom: 10px;
+}
+
+.amountTasks {
+  color: $gray-color;
+}
+
+.priceWrapper {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.price,
+.priceDecorative {
+  font-size: 12px;
+  line-height: calc(16/12);
+}
+
+.price {
+  color: $accent-secondary-color;
+  font-weight: 700;
+}
+
+.priceDecorative {
+  color: $gray-color;
+  font-weight: 500;
+}
+
+.dragging {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hovered {
+  transform: translateY(-10px);
+}
+
+.dragAndDropBtn {
+  cursor: grab;
+}

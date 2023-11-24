@@ -57,7 +57,7 @@ export const AddNewPositionModal: FC<AddNewPositionModalProps> = ({ isOpen, setI
     }
 
     dispatch(addPost(newPost));
-    formikHelpers.resetForm();
+    // formikHelpers.resetForm();
     setIsOpen(false);
   }
 

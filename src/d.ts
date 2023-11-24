@@ -8,6 +8,7 @@ export type Post = {
 export type PostsState = {
   postsList: Post[],
   currentPost: number,
+  draggedPostIndex: number | null;
 };
 
 export type currentBarState = {

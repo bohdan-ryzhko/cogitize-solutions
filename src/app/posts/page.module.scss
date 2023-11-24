@@ -14,11 +14,15 @@
   flex: 1;
   height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .categoryInfo {
   padding: 16px;
-  background-color: #303038;
+  background-color: $bg-secondary-color;
   flex-basis: 65%;
   height: 100%;
 }
