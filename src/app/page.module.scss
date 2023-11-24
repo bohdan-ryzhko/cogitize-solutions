@@ -6,4 +6,8 @@
     lightgray 0% 0% / 1.9999999552965164px 1.9999999552965164px repeat;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

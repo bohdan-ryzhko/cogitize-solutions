@@ -1,0 +1,23 @@
+@import "../../../sass/helper";
+
+.container {
+  width: 90%;
+  height: 80%;
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  padding: 10px;
+
+  @include mobile {
+    width: 70%;
+  }
+
+  @include tablet {
+    width: 60%;
+  }
+
+  @include desktop {
+    width: 54%;
+    height: 77%;
+    padding: 25px;
+  }
+}
