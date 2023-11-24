@@ -1,10 +1,13 @@
 "use client";
 import { FC, PropsWithChildren } from "react";
 import { Provider } from "react-redux";
-import { store } from "./index";
+import { persistor, store } from "./index";
+import { PersistGate } from "redux-persist/integration/react";
 
 export const Providers: FC<PropsWithChildren> = ({ children }) => (
   <Provider store={store}>
-    {children}
+    <PersistGate loading={null} persistor={persistor}>
+      {children}
+    </PersistGate>
   </Provider>
 );

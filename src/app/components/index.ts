@@ -1,8 +1,11 @@
-
 import { Container } from "./Container";
-import { Content } from "./Content";
+import { ContentWrapper } from "./ContentWrapper";
+import { LazyLoadContent } from "./LazyLoadContent";
+import { NavigationBar } from "./NavigationBar";
 
 export {
   Container,
-  Content,
+  ContentWrapper,
+  NavigationBar,
+  LazyLoadContent,
 }

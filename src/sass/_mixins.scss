@@ -15,3 +15,7 @@
     @content;
   }
 }
+
+@mixin setBorder($amountPX, $color) {
+  border: $amountPX solid $color;
+}

@@ -7,12 +7,8 @@
   border-radius: $border-radius;
   padding: 10px;
 
-  @include mobile {
-    width: 70%;
-  }
-
   @include tablet {
-    width: 60%;
+    width: 77%;
   }
 
   @include desktop {

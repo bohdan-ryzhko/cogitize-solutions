@@ -1,0 +1,24 @@
+@import "../../sass/helper";
+
+.postsBody {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.categoryWrapper {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.categoryInfo {
+  padding: 16px;
+  background-color: #303038;
+  flex-basis: 65%;
+  height: 100%;
+}

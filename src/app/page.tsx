@@ -1,17 +1,19 @@
-"use client";
-import { useReduxState } from '@/hooks'
-import { Container, Content } from './components'
-import styles from './page.module.scss'
+import {
+  Container,
+  ContentWrapper,
+  LazyLoadContent,
+  NavigationBar,
+} from './components'
+import sass from './page.module.scss'
 
 export default function Home() {
-  const { posts } = useReduxState();
-  console.log(posts);
   return (
-    <main className={styles.main}>
+    <main className={sass.main}>
       <Container>
-        <Content>
-
-        </Content>
+        <ContentWrapper>
+          <NavigationBar />
+          <LazyLoadContent />
+        </ContentWrapper>
       </Container>
     </main>
   )

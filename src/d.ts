@@ -9,3 +9,7 @@ export type PostsState = {
   postsList: Post[],
   currentPost: number,
 };
+
+export type currentBarState = {
+  bar: number,
+};
