@@ -28,33 +28,33 @@ npm run dev
 
 - mobile
 
-  ![mobile view 1](./public/readme-img/mobile-view-1.png)
-  ![mobile view 2](./public/readme-img/mobile-view-2.png)
+  ![mobile view 1](./public/readme-images/mobile-view-1.png)
+  ![mobile view 2](./public/readme-images/mobile-view-2.png)
 
 - tablet
 
-  ![tablet view 1](./public/readme-img/tablet-view-1.png)
-  ![tablet view 2](./public/readme-img/tablet-view-2.png)
+  ![tablet view 1](./public/readme-images/tablet-view-1.png)
+  ![tablet view 2](./public/readme-images/tablet-view-2.png)
 
 - desktop
 
-  ![desktop view 1](./public/readme-img/desktop-view.png)
+  ![desktop view 1](./public/readme-images/desktop-view.png)
 
 При натисканні на кнопку "Додати нову посаду" зʼявляється модальне вікно, в якому знаходиться форма з валідацією (використовував Formik + Yup):
-  ![modal](./public/readme-img/modal.png)
+  ![modal](./public/readme-images/modal.png)
 
 Після додавання валідних значень додається нова посада, вся інформація зберігається в локальному сховищі (для цього використовував Redux Persist) і зʼявляється повідомлення (для цього використовував react-toastify)
-  ![Add-new-post](./public/readme-img/add-new-post.png)
+  ![Add-new-post](./public/readme-images/add-new-post.png)
 
 Також було додано функціонал drag and drop
-  ![drag-and-drop-1](./public/readme-img/drag-1.png)
-  ![drag-and-drop-2](./public/readme-img/drag-2.png)
+  ![drag-and-drop-1](./public/readme-images/drag-1.png)
+  ![drag-and-drop-2](./public/readme-images/drag-2.png)
 
 У вводному полі "Назва" можна динамічно і одразу змінювати імʼя обраного користувача
-  ![controll-name](./public/readme-img/controll-name.png)
+  ![controll-name](./public/readme-images/controll-name.png)
 
 Усі змінені дані, дадані посади та обрані checboxes зберігаються і залишаються тими самими і після перезавантаження сторінки
-  ![save-info](./public/readme-img/save-check.png)
+  ![save-info](./public/readme-images/save-check.png)
 
 Також є можливість видаляти обрану посаду
-  ![remove-post](./public/readme-img/remove-post.png)
+  ![remove-post](./public/readme-images/remove-post.png)
