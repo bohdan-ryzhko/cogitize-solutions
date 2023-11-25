@@ -2,7 +2,7 @@ export type Post = {
   name: string,
   price: number,
   amountTasks: number,
-  id: number,
+  id: string,
 };
 
 export type PostsState = {

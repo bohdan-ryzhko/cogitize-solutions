@@ -1,6 +1,6 @@
 "use client";
 import sass from "./PositionList.module.scss";
-import { FC, useRef } from "react";
+import { FC, useRef, DragEvent } from "react";
 import { MdDragIndicator } from "react-icons/md";
 import { useReduxState } from "@/hooks";
 import { useDispatch } from "react-redux";
@@ -12,14 +12,14 @@ export const PositionList: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const dragItem = useRef<HTMLLIElement | null>(null);
 
-  const handleDragStart = (index: number, event: React.DragEvent<HTMLLIElement>) => {
+  const handleDragStart = (index: number, event: DragEvent<HTMLLIElement>) => {
     const { currentTarget } = event;
     currentTarget.classList.add(sass.dragging);
     dispatch(startDrag(index));
     dragItem.current = currentTarget;
   };
 
-  const handleDragOver = (index: number, event: React.DragEvent<HTMLLIElement>) => {
+  const handleDragOver = (index: number, event: DragEvent<HTMLLIElement>) => {
     event.preventDefault();
     const { currentTarget } = event;
 
@@ -36,21 +36,18 @@ export const PositionList: FC = () => {
     }
   };
 
-  const handleDragLeave = (index: number, event: React.DragEvent<HTMLLIElement>) => {
+  const handleDragLeave = (event: DragEvent<HTMLLIElement>) => {
     event.preventDefault();
-    const { currentTarget } = event;
 
     if (dragItem.current && posts.draggedPostIndex !== null) {
-      currentTarget.classList.remove(sass.hovered);
+      event.currentTarget.classList.remove(sass.hovered);
     }
   };
 
-  const handleDrop = (index: number, event: React.DragEvent<HTMLLIElement>) => {
+  const handleDrop = (index: number, event: DragEvent<HTMLLIElement>) => {
     event.preventDefault();
-    const { currentTarget } = event;
 
     if (dragItem.current && posts.draggedPostIndex !== null) {
-      currentTarget.classList.remove(sass.hovered);
       const startIndex = posts.draggedPostIndex;
       const endIndex = index;
       dispatch(movePost({ startIndex, endIndex }));
@@ -71,13 +68,12 @@ export const PositionList: FC = () => {
       {
         posts.postsList.map((post, index) => (
           <li
-            id={`post-${index}`}
-            key={post.amountTasks}
+            key={post.id}
             draggable
             onDragStart={(event) => handleDragStart(index, event)}
             onDragEnd={handleDragEnd}
             onDragOver={(event) => handleDragOver(index, event)}
-            onDragLeave={(event) => handleDragLeave(index, event)}
+            onDragLeave={handleDragLeave}
             onDrop={(event) => handleDrop(index, event)}
             className={sass.post}
           >

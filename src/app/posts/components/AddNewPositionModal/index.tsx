@@ -53,7 +53,7 @@ export const AddNewPositionModal: FC<AddNewPositionModalProps> = ({ isOpen, setI
       ...values,
       price: Number(values.price),
       amountTasks: Number(values.price),
-      id: getRandomId(),
+      id: `item-${getRandomId()}`,
     }
 
     dispatch(addPost(newPost));

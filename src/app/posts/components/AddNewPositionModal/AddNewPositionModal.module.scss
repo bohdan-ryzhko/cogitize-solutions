@@ -15,7 +15,12 @@
 }
 
 .form {
-  bottom: -100%;
+  left: -100%;
+
+  @include tablet {
+    left: 0;
+    bottom: -100%;
+  }
 }
 
 .formActive {
