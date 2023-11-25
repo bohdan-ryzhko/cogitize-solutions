@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-height: 350px;
   max-height: 450px;
   overflow-y: auto;
 
@@ -13,7 +14,8 @@
   }
 }
 
-.post {
+.post,
+.postActive {
   background-color: $bg-secondary-color;
   transition: transform 0.3s ease-in-out;
   border-radius: $border-radius;
@@ -23,6 +25,12 @@
   padding: 16px;
   min-height: 80px;
   width: 100%;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.postActive {
+  @include setBorder(2px, $accent-color);
 }
 
 .name {

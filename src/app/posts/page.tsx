@@ -1,6 +1,6 @@
 "use client"
 import sass from "./page.module.scss";
-import { AddNewPositionButton, AddNewPositionModal, PositionList } from "./components";
+import { AddNewPositionButton, AddNewPositionModal, CategoryInfo, PositionList } from "./components";
 import { useState } from "react";
 
 export default function Posts() {
@@ -19,7 +19,7 @@ export default function Posts() {
           setIsOpen={setIsOpen}
         />
       </div>
-      <div className={sass.categoryInfo}></div>
+      <CategoryInfo />
     </section>
   )
 }

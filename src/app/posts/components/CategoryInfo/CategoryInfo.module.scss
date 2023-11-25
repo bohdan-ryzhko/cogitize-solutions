@@ -1,0 +1,21 @@
+@import "../../../../sass/helper";
+
+.title {
+  text-align: center;
+  color: $white-color;
+  letter-spacing: 1px;
+}
+
+.categoryInfo {
+  padding: 16px;
+  background-color: $bg-secondary-color;
+  flex-basis: 65%;
+  min-height: 600px;
+  height: 100%;
+  border-radius: $border-radius;
+
+  @include tablet {
+    min-height: 400px;
+    overflow-y: auto;
+  }
+}

@@ -5,7 +5,7 @@ import { MdDragIndicator } from "react-icons/md";
 import { useReduxState } from "@/hooks";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux";
-import { endDrag, movePost, startDrag } from "@/redux/posts/slice";
+import { endDrag, movePost, setCurrentPost, startDrag } from "@/redux/posts/slice";
 
 export const PositionList: FC = () => {
   const { posts } = useReduxState();
@@ -54,8 +54,9 @@ export const PositionList: FC = () => {
     }
   };
 
-  const handleDragEnd = () => {
+  const handleDragEnd = (index: number) => {
     dispatch(endDrag());
+    dispatch(setCurrentPost(index));
 
     if (dragItem.current) {
       dragItem.current.classList.remove(sass.dragging);
@@ -71,11 +72,12 @@ export const PositionList: FC = () => {
             key={post.id}
             draggable
             onDragStart={(event) => handleDragStart(index, event)}
-            onDragEnd={handleDragEnd}
+            onDragEnd={() => handleDragEnd(index)}
             onDragOver={(event) => handleDragOver(index, event)}
             onDragLeave={handleDragLeave}
             onDrop={(event) => handleDrop(index, event)}
-            className={sass.post}
+            onClick={() => dispatch(setCurrentPost(index))}
+            className={posts.currentPost === index ? sass.postActive : sass.post}
           >
             <button type="button" className={sass.dragAndDropBtn}>
               <MdDragIndicator size={20} color="#F5F5F528" />

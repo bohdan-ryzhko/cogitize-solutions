@@ -25,12 +25,8 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
-}
-
-.categoryInfo {
-  padding: 16px;
-  background-color: $bg-secondary-color;
-  flex-basis: 65%;
-  height: 100%;
-  border-radius: $border-radius;
+  
+  @include tablet {
+    padding-bottom: 20px;
+  }
 }
