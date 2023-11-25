@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch, addPost } from "@/redux";
 import { getRandomId } from "@/utils";
 import * as Yup from 'yup';
+import { Responsibility } from "@/d";
 
 const digitsRegex = /^[0-9]+$/;
 
@@ -31,12 +32,14 @@ type NewPost = {
   price: string,
   amountTasks: string,
   id?: number,
+  responsibilities: Responsibility[],
 }
 
 const initialValues: NewPost = {
   name: "",
   price: "",
   amountTasks: "",
+  responsibilities: [],
 }
 
 type AddNewPositionModalProps = {
@@ -54,6 +57,12 @@ export const AddNewPositionModal: FC<AddNewPositionModalProps> = ({ isOpen, setI
       price: Number(values.price),
       amountTasks: Number(values.price),
       id: `item-${getRandomId()}`,
+      responsibilities: [
+        { title: "Торговля", name: "commerce", checkboxes: [] },
+        { title: "Разборки", name: "showdown", checkboxes: [] },
+        { title: "Производство", name: "production", checkboxes: [] },
+        { title: "Управление", name: "management", checkboxes: [] },
+      ],
     }
 
     dispatch(addPost(newPost));

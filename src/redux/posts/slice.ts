@@ -7,6 +7,12 @@ type UpdateCurrentName = {
   currentPost: number,
 }
 
+type UpdateResponsibility = {
+  currentPost: number,
+  value: string,
+  name: string,
+}
+
 const initialState: PostsState = {
   postsList: [],
   currentPost: 0,
@@ -37,7 +43,17 @@ const postsSlice = createSlice({
     },
     updateCurrentName(state, { payload }: PayloadAction<UpdateCurrentName>) {
       state.postsList[payload.currentPost].name = payload.value;
-    }
+    },
+    addResponsibility(state, { payload }: PayloadAction<UpdateResponsibility>) {
+      const currentTypeResponsibility = state.postsList[payload.currentPost].responsibilities.find(({ name }) => name === payload.name);
+      currentTypeResponsibility?.checkboxes.push(payload.value);
+      currentTypeResponsibility!.checkboxes = Array.from(new Set(currentTypeResponsibility!.checkboxes));
+    },
+    removeResponsibility(state, { payload }: PayloadAction<UpdateResponsibility>) {
+      const currentTypeResponsibility = state.postsList[payload.currentPost].responsibilities.find(({ name }) => name === payload.name);
+      const removingIndex = currentTypeResponsibility?.checkboxes.findIndex(responsibility => responsibility === payload.value);
+      currentTypeResponsibility?.checkboxes.splice(removingIndex!, 1);
+    },
   },
 });
 
@@ -48,6 +64,8 @@ export const {
   movePost,
   setCurrentPost,
   updateCurrentName,
+  addResponsibility,
+  removeResponsibility,
 } = postsSlice.actions;
 
 export default postsSlice.reducer;

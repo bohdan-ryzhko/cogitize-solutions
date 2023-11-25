@@ -25,6 +25,10 @@
 
 .formActive {
   bottom: 70px;
+
+  @include tablet {
+    bottom: 90px;
+  }
 }
 
 .submitBtn {

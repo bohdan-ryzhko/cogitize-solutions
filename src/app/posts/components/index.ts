@@ -5,6 +5,7 @@ import { ControllName } from "./ControllName";
 import { LabelInput } from "./LabelInput";
 import { PositionList } from "./PositionList";
 import { Responsibilities } from "./Responsibilities";
+import { ResponsibilitiesForm } from "./ResponsibilitiesForm";
 
 export {
   PositionList,
@@ -14,4 +15,5 @@ export {
   ControllName,
   CategoryInfo,
   Responsibilities,
+  ResponsibilitiesForm,
 }
