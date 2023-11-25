@@ -10,11 +10,10 @@
   padding: 16px;
   background-color: $bg-secondary-color;
   flex-basis: 65%;
-  min-height: 600px;
-  height: 100%;
   border-radius: $border-radius;
 
   @include tablet {
+    height: 100%;
     min-height: 400px;
     overflow-y: auto;
   }

@@ -1,0 +1,37 @@
+@import "../../../../sass/helper";
+
+.label {
+  color: $white-color;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: calc(18/12);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  margin: -1px;
+}
+
+.customCheckBox,
+.customCheckBoxActive {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.customCheckBox {
+  @include setBorder(2px, rgba(245, 245, 245, 0.08));
+}
+
+.customCheckBoxActive {
+  @include setBorder(2px, $accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

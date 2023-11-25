@@ -1,6 +1,6 @@
 "use client";
-import { useFormik } from "formik";
 import sass from "./ResponsibilitiesForm.module.scss";
+import { useFormik } from "formik";
 import { ChangeEvent, FC } from "react";
 import { getInitialValuesResponsibilities } from "@/utils";
 import { useReduxState } from "@/hooks";
@@ -18,12 +18,10 @@ export const ResponsibilitiesForm: FC = () => {
 
   const formik = useFormik({
     initialValues: getInitialValuesResponsibilities(currentResponsibilities),
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: () => {
+      alert(JSON.stringify(postsList, null, 2));
     },
   });
-
-  console.log(postsList[currentPost].responsibilities);
 
   const handleChangeCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
     formik.handleChange(event);
@@ -50,23 +48,23 @@ export const ResponsibilitiesForm: FC = () => {
     >
       <div className={sass.responsibilitiesContent}>
         <div className={sass.checkboxGroup}>
-          <h3 className={sass.groupTitl}>Торговля</h3>
+          <h3 className={sass.groupTitle}>Торговля</h3>
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Продавать продукт" name="commerce" value="sales-products" />
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Выставлять цены" name="commerce" value="set-prices" />
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Смотреть аналитику" name="commerce" value="watch-analytics" />
         </div>
         <div className={sass.checkboxGroup}>
-          <h3 className={sass.groupTitl}>Производство</h3>
+          <h3 className={sass.groupTitle}>Производство</h3>
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Закупать сырье" name="production" value="purchase-raw-materials" />
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Назначать рабочих" name="production" value="assign-workers" />
         </div>
         <div className={sass.checkboxGroup}>
-          <h3 className={sass.groupTitl}>Разборки</h3>
+          <h3 className={sass.groupTitle}>Разборки</h3>
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Дуель" name="showdown" value="duel" />
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Выставлять претензии" name="showdown" value="make-claim" />
         </div>
         <div className={sass.checkboxGroup}>
-          <h3 className={sass.groupTitl}>Разборки</h3>
+          <h3 className={sass.groupTitle}>Разборки</h3>
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Назначать должности" name="management" value="assign-positions" />
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Выгонять из банды" name="management" value="kick-from-band" />
         </div>

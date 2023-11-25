@@ -1,7 +1,9 @@
 @import "../../../../sass/helper";
 
 .responsibilitiesBody {
-  height: calc(100% - 135px);
+  @include tablet {
+    height: calc(100% - 135px);
+  }
 }
 
 .responsibilitiesHeder {
