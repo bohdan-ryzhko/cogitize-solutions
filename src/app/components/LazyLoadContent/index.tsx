@@ -21,7 +21,7 @@ export const LazyLoadContent: FC = () => {
 
   return (
     <div className={sass.lazyWrapper}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div style={{ color: "#fff" }}>Loading...</div>}>
         <LazyComponent />
       </Suspense>
     </div>

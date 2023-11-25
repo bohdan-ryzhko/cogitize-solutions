@@ -21,7 +21,7 @@
 }
 
 .submitBtn {
-  width: 100%;
+  flex-basis: 87%;
   background-color: $accent-color;
   text-align: center;
   padding-top: 14px;
@@ -34,6 +34,30 @@
 
   &:hover {
     background-color: $accent-color-hv;
+  }
+}
+
+.removeBtn {
+  flex: 1;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include setBorder(2px, $accent-color);
+  height: 100%;
+  border-radius: $border-radius;
+  transition: all 300ms ease;
+
+  & > svg {
+    transition: all 300ms ease;
+  }
+
+  &:hover {
+    background-color: $accent-color;
+
+    & > svg {
+      fill: $bg-color;
+    }
   }
 }
 
@@ -67,3 +91,8 @@
   line-height: calc(18/12);
 }
 
+.btnsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

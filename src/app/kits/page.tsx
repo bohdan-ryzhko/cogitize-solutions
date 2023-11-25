@@ -1,5 +1,5 @@
 export default function Kits() {
   return (
-    <h1>Kits page</h1>
+    <h1 style={{ color: "#fff" }}>Kits page</h1>
   )
 }

@@ -8,6 +8,7 @@ import { AppDispatch, addPost } from "@/redux";
 import { getRandomId } from "@/utils";
 import * as Yup from 'yup';
 import { Responsibility } from "@/d";
+import { toast } from "react-toastify";
 
 const digitsRegex = /^[0-9]+$/;
 
@@ -66,7 +67,8 @@ export const AddNewPositionModal: FC<AddNewPositionModalProps> = ({ isOpen, setI
     }
 
     dispatch(addPost(newPost));
-    // formikHelpers.resetForm();
+    toast.success(`${newPost.name} was added successfully!`);
+    formikHelpers.resetForm();
     setIsOpen(false);
   }
 

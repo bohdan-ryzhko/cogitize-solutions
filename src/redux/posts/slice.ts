@@ -54,6 +54,9 @@ const postsSlice = createSlice({
       const removingIndex = currentTypeResponsibility?.checkboxes.findIndex(responsibility => responsibility === payload.value);
       currentTypeResponsibility?.checkboxes.splice(removingIndex!, 1);
     },
+    removePost(state, action: PayloadAction<number>) {
+      state.postsList.splice(action.payload, 1);
+    }
   },
 });
 
@@ -66,6 +69,7 @@ export const {
   updateCurrentName,
   addResponsibility,
   removeResponsibility,
+  removePost,
 } = postsSlice.actions;
 
 export default postsSlice.reducer;

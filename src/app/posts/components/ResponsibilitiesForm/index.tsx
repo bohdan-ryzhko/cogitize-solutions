@@ -7,7 +7,9 @@ import { useReduxState } from "@/hooks";
 import { CheckBox } from "../CheckBox";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux";
-import { addResponsibility, removeResponsibility } from "@/redux/posts/slice";
+import { addResponsibility, removePost, removeResponsibility, setCurrentPost } from "@/redux/posts/slice";
+import { FaTrash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 export const ResponsibilitiesForm: FC = () => {
   const { posts: { postsList, currentPost } } = useReduxState();
@@ -41,6 +43,12 @@ export const ResponsibilitiesForm: FC = () => {
     dispatch(removeResponsibility(checkedInfo));
   }
 
+  const handleRemovePost = () => {
+    dispatch(removePost(currentPost));
+    dispatch(setCurrentPost(0));
+    toast.info(`${postsList[currentPost].name} was deleted successfully!`);
+  }
+
   return (
     <form
       onSubmit={formik.handleSubmit}
@@ -69,7 +77,16 @@ export const ResponsibilitiesForm: FC = () => {
           <CheckBox handleChangeCheckbox={handleChangeCheckbox} text="Выгонять из банды" name="management" value="kick-from-band" />
         </div>
       </div>
-      <button className={sass.submitBtn} type="submit">Сохранить</button>
+      <div className={sass.btnsWrapper}>
+        <button className={sass.submitBtn} type="submit">Сохранить</button>
+        <button
+          onClick={handleRemovePost}
+          className={sass.removeBtn}
+          type="button"
+        >
+          <FaTrash color="#6764f1" />
+        </button>
+      </div>
     </form>
   )
 };

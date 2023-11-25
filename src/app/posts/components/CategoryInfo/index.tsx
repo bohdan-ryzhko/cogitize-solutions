@@ -11,7 +11,7 @@ export const CategoryInfo: FC = () => {
     <div className={sass.categoryInfo}>
       {
         posts.postsList.length === 0
-          ? <h2 className={sass.title}>Create your new post</h2>
+          ? <h2 className={sass.title}>Создай свою первую должность</h2>
           : (
             <>
               <ControllName />
